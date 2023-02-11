@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TemperatureConverter.Shared;
+using TemperatureConverter.Integration.Tests.shared;
 using Xunit;
 
 namespace TemperatureConverter.Integration.Tests
 {
-    [CollectionDefinition("TemperatureConverter Collection")]
-    public class TemperatureIntegrationTests : IClassFixture<TemperatureConverterFixture>
+    public class TemperatureIntegrationTests : IClassFixture<TemperatureConverterIntegrationTestsFixture>
     {
-        private readonly TemperatureConverterFixture _temperatureConverterFixture;
+        private readonly TemperatureConverterIntegrationTestsFixture _temperatureConverterFixture;
 
-        public TemperatureIntegrationTests(TemperatureConverterFixture temperatureConverterFixture)
+        public TemperatureIntegrationTests(TemperatureConverterIntegrationTestsFixture temperatureConverterFixture)
         {
             _temperatureConverterFixture = temperatureConverterFixture;
         }

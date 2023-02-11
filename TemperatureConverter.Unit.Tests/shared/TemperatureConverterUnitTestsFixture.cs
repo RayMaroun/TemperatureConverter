@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TemperatureConverter.Shared
+namespace TemperatureConverter.Unit.Tests.shared
 {
-    public class TemperatureConverterFixture : IDisposable
+    public class TemperatureConverterUnitTestsFixture : IDisposable
     {
         public TemperatureConverter TemperatureConverter { get; private set; }
 
-        public TemperatureConverterFixture()
+        public TemperatureConverterUnitTestsFixture()
         {
             TemperatureConverter = new TemperatureConverter();
         }
@@ -20,3 +20,4 @@ namespace TemperatureConverter.Shared
         }
     }
 }
+
