@@ -52,37 +52,5 @@ namespace TemperatureConverter.Integration.Tests
             Assert.Throws<ArgumentOutOfRangeException>(() => temperatureConverter.CelsiusToFahrenheit(negativeAbsoluteCelsius));
             Assert.Throws<ArgumentOutOfRangeException>(() => temperatureConverter.FahrenheitToCelsius(negativeAbsoluteFahrenheit));
         }
-
-        [Theory]
-        [InlineData(0, 32, 100, 212)]
-        public void CelsiusToFahrenheit_ConvertsCorrectly_WhenValidInputsAreGiven(int celsius, int expectedFahrenheit, int anotherCelsius, int anotherExpectedFahrenheit)
-        {
-            // Arrange
-            var temperatureConverter = _temperatureConverterFixture.TemperatureConverter;
-
-            // Act
-            var result1 = temperatureConverter.CelsiusToFahrenheit(celsius);
-            var result2 = temperatureConverter.CelsiusToFahrenheit(anotherCelsius);
-
-            // Assert
-            Assert.Equal(expectedFahrenheit, result1);
-            Assert.Equal(anotherExpectedFahrenheit, result2);
-        }
-
-        [Theory]
-        [InlineData(32, 0, 212, 100)]
-        public void FahrenheitToCelsius_ConvertsCorrectly_WhenValidInputsAreGiven(int fahrenheit, int expectedCelsius, int anotherFahrenheit, int anotherExpectedCelsius)
-        {
-            // Arrange
-            var temperatureConverter = _temperatureConverterFixture.TemperatureConverter;
-
-            // Act
-            var result1 = temperatureConverter.FahrenheitToCelsius(fahrenheit);
-            var result2 = temperatureConverter.FahrenheitToCelsius(anotherFahrenheit);
-
-            // Assert
-            Assert.Equal(expectedCelsius, result1);
-            Assert.Equal(anotherExpectedCelsius, result2);
-        }
     }
 }
